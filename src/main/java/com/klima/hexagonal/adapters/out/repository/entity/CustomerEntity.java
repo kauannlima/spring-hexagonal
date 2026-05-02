@@ -3,9 +3,10 @@ package com.klima.hexagonal.adapters.out.repository.entity;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.Field;
 
 @Data
-@Document(collation = "customers")
+@Document(collection = "customers")
 
 public class CustomerEntity {
 
@@ -14,5 +15,6 @@ public class CustomerEntity {
     private String name;
     private AddressEntity address;
     private String cpf;
-    private Boolean isValidCpf;
+    @Field("isValidCpf")
+    private Boolean validCpf;
 }

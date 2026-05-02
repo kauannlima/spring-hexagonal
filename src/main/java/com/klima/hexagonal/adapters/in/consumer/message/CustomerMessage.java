@@ -1,5 +1,6 @@
 package com.klima.hexagonal.adapters.in.consumer.message;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -13,5 +14,6 @@ public class CustomerMessage {
     private String name;
     private String zipCode;
     private String cpf;
-    private Boolean isValidCpf;
+    @JsonProperty("isValidCpf")
+    private Boolean validCpf;
 }

@@ -8,13 +8,13 @@ import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-@Mapper
+@Mapper(componentModel = "spring")
 public interface CustomerMapper {
 
     @Mapping(target = "id", ignore  = true)
     @Mapping(target = "address", ignore  = true)
-    @Mapping(target = "isValidCpf", ignore  = true)
-    Customer toCustomer(@Valid @RequestBody CustomerRequest customerRequest);
+    @Mapping(target = "validCpf", ignore  = true)
+    Customer toCustomer(CustomerRequest customerRequest);
 
     CustomerResponse toCustomerResponse(Customer customer);
 }
